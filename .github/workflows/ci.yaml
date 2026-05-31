@@ -6,7 +6,7 @@ on:
   push:
     branches:
       - main #this workflow will run when there is a push to the main branch
-    paths--ignore:
+    paths-ignore:
       - 'README.md' #this workflow will not run when there is a change in the README.md file
       - 'helm/**' #this workflow will not run when there is a change in the helm directory
 
@@ -40,7 +40,7 @@ jobs:  #this is the section where we define the jobs that will run in this workf
     - name: Run golangci-lint
       uses: golangci/golangci-lint-action@v6
       with:
-        version: v1.56.2
+        version: latest
 
   push:
     runs-on: ubuntu-latest
